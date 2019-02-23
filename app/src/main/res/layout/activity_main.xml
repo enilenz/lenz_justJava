@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    //lets the user scroll the layout
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        //parent Layout
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CCFF66"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:layout_editor_absoluteX="49dp"
+            tools:layout_editor_absoluteY="0dp">
+            // coffee imageView
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/coffee_2" />
+            //editText field
+
+            <EditText
+                android:id="@+id/name_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_name"
+                android:inputType="textCapWords" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/toppings"
+                android:textAllCaps="true"
+                android:textSize="23sp" />
+            // cream checkBox
+
+            <CheckBox
+                android:id="@+id/cream_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/Whipped_Cream" />
+            // chocolate checkBox
+
+            <CheckBox
+                android:id="@+id/chocolate_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/Chocolate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/QUANTITY"
+                android:textSize="23sp" />
+            // child horizontal LinearLayout
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                // reduces quantity by one
+
+                <Button
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:onClick="decrement"
+                    android:padding="4dp"
+                    android:text="-" />
+
+
+                <TextView
+                    android:id="@+id/quantity_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="13sp"
+                    android:padding="4dp"
+                    android:text="1"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+                // increases quantity by one
+
+                <Button
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:onClick="increment"
+                    android:padding="4dp"
+                    android:text="+" />
+
+            </LinearLayout>
+
+
+            <Button
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="reset"
+                android:padding="4dp"
+                android:text="@string/RESET" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="submitOrder"
+                android:text="@string/ORDER"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
